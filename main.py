@@ -1,9 +1,11 @@
 if __name__ == '__main__':
-    aliens = []
-    for alien_number in range(30):
-        new_alien = {'color': 'green', 'speed': 'fast', 'points': 7, 'number': alien_number}
-        aliens.append(new_alien)
-    for alien in aliens[:5]:
-        print(alien)
-    print('...')
-    print(f'Total amount of aliens is {len(aliens)}')
+    favourite_languages = {
+        'jen': ['python', 'ruby'],
+        'sarah': ['c'],
+        'edward': ['ruby', 'go'],
+        'phil': ['python', 'haskell']
+    }
+    for name, languages in favourite_languages.items():
+        print(f'\n{name.title()}\'s favourite language are:', end=' ')
+        for language in languages:
+            print(f'{language.title()}', end=' ')
