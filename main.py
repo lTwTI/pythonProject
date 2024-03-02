@@ -1,11 +1,13 @@
 if __name__ == '__main__':
-    favourite_languages = {
-        'jen': ['python', 'ruby'],
-        'sarah': ['c'],
-        'edward': ['ruby', 'go'],
-        'phil': ['python', 'haskell']
-    }
-    for name, languages in favourite_languages.items():
-        print(f'\n{name.title()}\'s favourite language are:', end=' ')
-        for language in languages:
-            print(f'{language.title()}', end=' ')
+    responses = {}
+    poll_is_active = True
+    while poll_is_active:
+        name = input('\nWhat is your name? ')
+        response = input('Which mountain would you like to climb? ')
+        responses[name] = response
+        repeat = input('Would you like to let another person respond? (yes/no) ')
+        if repeat == 'no':
+            poll_is_active = False
+    print('\n---Poll results---')
+    for name, response in responses.items():
+        print(f'{name} would like to climb {response} mountain.')
