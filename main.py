@@ -1,13 +1,24 @@
+import time
+
+
+def loader(info, timer) -> None:
+    chars = '|/-\\'
+    pointer = 0
+
+    end_time = time.time() + timer
+
+    print(info)
+
+    while time.time() < end_time:
+        remaining_time = int(end_time - time.time())
+        current_char = chars[pointer]
+        print(f'\rLoading: {current_char} {remaining_time}s left', end='', flush=True)
+        pointer = (pointer + 1) % len(chars)
+        time.sleep(0.25)
+
+    print('\rThe download process has been successfully completed.')
+
+
 if __name__ == '__main__':
-    responses = {}
-    poll_is_active = True
-    while poll_is_active:
-        name = input('\nWhat is your name? ')
-        response = input('Which mountain would you like to climb? ')
-        responses[name] = response
-        repeat = input('Would you like to let another person respond? (yes/no) ')
-        if repeat == 'no':
-            poll_is_active = False
-    print('\n---Poll results---')
-    for name, response in responses.items():
-        print(f'{name} would like to climb {response} mountain.')
+    message = 'Take a coffee break.'
+    loader(message, 5)
