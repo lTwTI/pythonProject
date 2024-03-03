@@ -19,5 +19,14 @@ class Car:
             print("You can't roll back the odometer!")
 
 
+class ElectricCar(Car):
+    def __init__(self, manufacturer, model, year):
+        self.battery_size = 75
+        super().__init__(manufacturer, model, year)
+
+    def describe_battery(self):
+        print(f'This car has a {self.battery_size}-kWh battery.')
+
+
 if __name__ == '__main__':
     print()
