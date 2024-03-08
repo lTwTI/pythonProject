@@ -1,7 +1,7 @@
 import time
 
 
-def loader(info, timer) -> None:
+def loader(timer: int, info: str = '') -> None:
     chars = '|/-\\'
     pointer = 0
 
