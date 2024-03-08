@@ -31,9 +31,3 @@ class ElectricCar(Car):
     def __init__(self, manufacturer: str, model: str, year: int) -> None:
         super().__init__(manufacturer, model, year)
         self.battery = Battery()
-
-
-if __name__ == '__main__':
-    my_tesla = ElectricCar('tesla', 'model s', 2019)
-    print(my_tesla.get_descriptive_name())
-    my_tesla.battery.describe_battery()
